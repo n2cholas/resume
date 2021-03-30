@@ -1,0 +1,116 @@
+% LaTeX resume using res.cls
+\documentclass[line,margin]{res}
+% \usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+% \usepackage{newcent}   % uses new century schoolbook postscript font
+% \usepackage{lmodern}
+% \usepackage{tgtermes}
+% \usepackage{tgpagella}
+% \usepackage{mathptmx}
+\usepackage{palatino}
+% \usepackage{charter}
+
+\usepackage{hyperref}  % hyperlinks
+\usepackage{enumitem}  % itemize options
+
+\setlist[itemize]{label={\small\textbullet}, leftmargin=4.5mm}
+
+\begin{document}
+
+\name{\Large{Nicholas Vadivelu - Curriculum Vitae}}
+\address{
+    (647) 643-4450 $\cdot$
+    \href{mailto:nbvadive@uwaterloo.ca}{nbvadive@uwaterloo.ca} $\cdot$
+    \href{https://nicholasvadivelu.com/}{nicholasvadivelu.com}
+}
+
+
+\begin{resume}
+\vspace{-4mm}
+
+% \section{OBJECTIVE}
+%     A position in the field of computers with special
+%     interests in business applications programming,
+%     information processing, and management systems.
+
+
+\section{EDUCATION}
+    % \sl will be bold italic in New Century Schoolbook (or
+    % any postscript font) and just slanted in
+    % Computer Modern (default) font
+    \textit{Bachelor of Mathematics}, Computer Science and Statistics (Double Major) \\
+    University of Waterloo, Waterloo, ON, \\
+    Expected April 2022 \\
+
+
+\section{EXPERIENCE}
+    \textbf{Citadel}, \textit{Incoming Quantitative Research Intern} \hfill Summer 2021\\
+        \vspace{-4mm}
+        \begin{itemize}  \itemsep -2pt % reduce space between items
+        \item test point
+        \item another test point
+        \end{itemize}
+
+    \textbf{NVIDIA}, \textit{Performance Software Engineering Intern} \hfill Fall 2020\\
+        \vspace{-4mm}
+        \begin{itemize}  \itemsep -2pt % reduce space between items
+        \item test point
+        \item another test point
+        \end{itemize}
+
+
+\section{RESEARCH}
+    Advisor: \textbf{Prof. Gautam Kamath} \hfill Fall 2020\\
+        \vspace{-4mm}
+        \begin{itemize}  \itemsep -2pt % reduce space between items
+        \item summary of research
+        \end{itemize}
+
+    \vspace{-1mm}
+    Advisor: \textbf{Prof. Pascal Poupart} \hfill Fall 2020\\
+        \vspace{-4mm}
+        \begin{itemize}  \itemsep -2pt % reduce space between items
+        \item summary of research
+        \end{itemize}
+
+\section{PUBLICATIONS}
+    \href{https://arxiv.org/abs/2011.05289}
+    {\textbf{Nicholas Vadivelu}, Mengye Ren, James Tu, Jingkang Wang, Raquel Urtasun.
+    Learning to Communicate and Correct Pose Errors.
+    In \textit{Conference on Robot Learning (CoRL)},
+    Virtual, 2020}
+    \vspace{-2mm}
+
+    \href{https://arxiv.org/abs/2010.09063}
+    {Pranav Subramani, \textbf{Nicholas Vadivelu}, Gautam Kamath.
+    Enabling Fast Differentially Private SGD via Just-in-Time Compilation and Vectorization.
+    In \textit{NeurIPS PPML Workshop},
+    Virtual, 2020}
+
+\section{TALKS}
+    Clustering for Image Analysis (with Kanika Chopra).
+    \textit{WiSTEM High School Student Conference},
+    Virtual, Feb 2021.
+    \vspace{-2mm}
+
+    Establishing a Productive Machine Learning Workflow.
+    \textit{Hack the North++}
+    Virtual, Jan 2021.
+
+\section{SOFTWARE}
+    \href{https://github.com/n2cholas/jax-resnet}
+    {\textbf{ShapeCheck: } Framework agnostic runtime array checking library.
+    \vspace{-2mm}}
+
+    \href{https://pypi.org/project/shapecheck/}
+    {\textbf{JAX ResNet: } Composable, unit-tested code and checkpoints for ResNet variants.}
+
+\section{LEADERHIP}
+    \textbf{UWaterloo Data Science Club}, \textit{Lecturer} \hfill Fall 2018 - Present\\
+        \vspace{-4mm}
+        \begin{itemize}  \itemsep -2pt % reduce space between items
+        \item test point
+        \item another test point
+        \end{itemize}
+
+\end{resume}
+\end{document}
