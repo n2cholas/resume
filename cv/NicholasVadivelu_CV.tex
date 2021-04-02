@@ -1,18 +1,19 @@
 % LaTeX resume using res.cls
 \documentclass[line,margin]{res}
-% \usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-% \usepackage{newcent}   % uses new century schoolbook postscript font
-% \usepackage{lmodern}
-% \usepackage{tgtermes}
 % \usepackage{tgpagella}
-% \usepackage{mathptmx}
 \usepackage{palatino}
-% \usepackage{charter}
 
 \usepackage{hyperref}  % hyperlinks
 \usepackage{enumitem}  % itemize options
 
-\setlist[itemize]{label={\small\textbullet}, leftmargin=4.5mm}
+\setlist[itemize]{label={\small\textbullet}, itemsep=-2pt, leftmargin=4.5mm}
+
+\newcommand{\experience}[3]{\textbf{#1}, \textit{#2} \hfill #3 \\ \vspace{-4mm}}
+\newcommand{\ura}[3]{Advisor: \textbf{#1}, \textit{#2} \hfill #3 \\ \vspace{-4mm}}
+\newcommand{\paper}[6]{\href{#6}{#1. #2. In \textit{#3}, #4, #5.}}
+\newcommand{\software}[3]{\href{#3}{\textbf{#1: } #2.}\vspace{-2mm}}
+\newcommand{\talk}[4]{#1. \textit{#2}, #3, #4. \vspace{-2mm}}
+
 
 \begin{document}
 
@@ -23,94 +24,77 @@
     \href{https://nicholasvadivelu.com/}{nicholasvadivelu.com}
 }
 
-
 \begin{resume}
 \vspace{-4mm}
 
-% \section{OBJECTIVE}
-%     A position in the field of computers with special
-%     interests in business applications programming,
-%     information processing, and management systems.
-
-
 \section{EDUCATION}
-    % \sl will be bold italic in New Century Schoolbook (or
-    % any postscript font) and just slanted in
-    % Computer Modern (default) font
     \textit{Bachelor of Mathematics}, Computer Science and Statistics (Double Major) \\
     University of Waterloo, Waterloo, ON, \\
-    Expected April 2022 \\
+    Expected April 2022
 
 
 \section{EXPERIENCE}
-    \textbf{Citadel}, \textit{Incoming Quantitative Research Intern} \hfill Summer 2021\\
-        \vspace{-4mm}
-        \begin{itemize}  \itemsep -2pt % reduce space between items
+    \experience{Citadel}{Incoming Quantitative Research Intern}{Summer 2021}
+    \begin{itemize}
         \item test point
         \item another test point
-        \end{itemize}
+    \end{itemize}
 
-    \textbf{NVIDIA}, \textit{Performance Software Engineering Intern} \hfill Fall 2020\\
-        \vspace{-4mm}
-        \begin{itemize}  \itemsep -2pt % reduce space between items
+    \experience{NVIDIA}{Performance Software Engineering Intern}{Fall 2020}
+    \begin{itemize}
         \item test point
         \item another test point
-        \end{itemize}
+    \end{itemize}
 
 
 \section{RESEARCH}
-    Advisor: \textbf{Prof. Gautam Kamath} \hfill Fall 2020\\
-        \vspace{-4mm}
-        \begin{itemize}  \itemsep -2pt % reduce space between items
+    \ura{Professor Gautam Kamath}{University of Waterloo}{Fall 2020}
+    \begin{itemize}
         \item summary of research
-        \end{itemize}
+    \end{itemize}
 
-    \vspace{-1mm}
-    Advisor: \textbf{Prof. Pascal Poupart} \hfill Fall 2020\\
-        \vspace{-4mm}
-        \begin{itemize}  \itemsep -2pt % reduce space between items
+    \ura{Professor Pascal Poupart}{University of Waterloo}{Fall 2020}
+    \begin{itemize}
         \item summary of research
-        \end{itemize}
+    \end{itemize}
 
 \section{PUBLICATIONS}
-    \href{https://arxiv.org/abs/2011.05289}
-    {\textbf{Nicholas Vadivelu}, Mengye Ren, James Tu, Jingkang Wang, Raquel Urtasun.
-    Learning to Communicate and Correct Pose Errors.
-    In \textit{Conference on Robot Learning (CoRL)},
-    Virtual, 2020}
-    \vspace{-2mm}
+    \paper
+    {\textbf{Nicholas Vadivelu}, Mengye Ren, James Tu, Jingkang Wang, Raquel Urtasun}
+    {Learning to Communicate and Correct Pose Errors}
+    {Conference on Robot Learning (CoRL)}{Virtual}{2020}
+    {https://arxiv.org/abs/2011.05289}
+    \vspace{-3mm}
 
-    \href{https://arxiv.org/abs/2010.09063}
-    {Pranav Subramani, \textbf{Nicholas Vadivelu}, Gautam Kamath.
-    Enabling Fast Differentially Private SGD via Just-in-Time Compilation and Vectorization.
-    In \textit{NeurIPS PPML Workshop},
-    Virtual, 2020}
+    \paper
+    {Pranav Subramani, \textbf{Nicholas Vadivelu}, Gautam Kamath}
+    {Enabling Fast Differentially Private SGD via Just-in-Time Compilation and Vectorization}
+    {\textit{NeurIPS PPML Workshop}}{Virtual}{2020}
+    {https://arxiv.org/abs/2010.09063}
 
 \section{TALKS}
-    Clustering for Image Analysis (with Kanika Chopra).
-    \textit{WiSTEM High School Student Conference},
-    Virtual, Feb 2021.
-    \vspace{-2mm}
+    \talk
+    {Clustering for Image Analysis (with Kanika Chopra)}
+    {WiSTEM High School Student Conference}{Virtual}{Feb 2021}
 
-    Establishing a Productive Machine Learning Workflow.
-    \textit{Hack the North++}
-    Virtual, Jan 2021.
+    \talk
+    {Establishing a Productive Machine Learning Workflow}
+    {Hack the North++}{Virtual}{Jan 2021}
 
 \section{SOFTWARE}
-    \href{https://github.com/n2cholas/jax-resnet}
-    {\textbf{ShapeCheck: } Framework agnostic runtime array checking library.
-    \vspace{-2mm}}
+    \software{ShapeCheck}{Framework agnostic runtime array checking library}
+    {https://github.com/n2cholas/jax-resnet}
 
-    \href{https://pypi.org/project/shapecheck/}
-    {\textbf{JAX ResNet: } Composable, unit-tested code and checkpoints for ResNet variants.}
+    \software
+    {JAX ResNet}{Composable, unit-tested code and checkpoints for ResNet variants}
+    {https://pypi.org/project/shapecheck/}
 
 \section{LEADERHIP}
-    \textbf{UWaterloo Data Science Club}, \textit{Lecturer} \hfill Fall 2018 - Present\\
-        \vspace{-4mm}
-        \begin{itemize}  \itemsep -2pt % reduce space between items
+    \experience{UWaterloo Data Science Club}{Lecturer}{Fall 2018 - Present}
+    \begin{itemize}
         \item test point
         \item another test point
-        \end{itemize}
+    \end{itemize}
 
 \end{resume}
 \end{document}
