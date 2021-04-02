@@ -1,18 +1,25 @@
 % LaTeX resume using res.cls
 \documentclass[line,margin]{res}
+% \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 % \usepackage{tgpagella}
 \usepackage{palatino}
 
 \usepackage{hyperref}  % hyperlinks
 \usepackage{enumitem}  % itemize options
 
+% \addtolength{\hoffset}{-0.5cm}
+% \addtolength{\textwidth}{1cm}
+% \addtolength{\voffset}{-2.5cm}
+% \addtolength{\textheight}{5cm}
+
 \setlist[itemize]{label={\small\textbullet}, itemsep=-2pt, leftmargin=4.5mm}
 
 \newcommand{\experience}[3]{\textbf{#1}, \textit{#2} \hfill #3 \\ \vspace{-4mm}}
-\newcommand{\ura}[3]{Advisor: \textbf{#1}, \textit{#2} \hfill #3 \\ \vspace{-4mm}}
+\newcommand{\ura}[3]{Advisor(s): \textbf{#1}, \textit{#2} \hfill #3 \\ \vspace{-4mm}}
 \newcommand{\paper}[6]{\href{#6}{#1. #2. In \textit{#3}, #4, #5.}}
 \newcommand{\software}[3]{\href{#3}{\textbf{#1: } #2.}\vspace{-2mm}}
-\newcommand{\talk}[4]{#1. \textit{#2}, #3, #4. \vspace{-2mm}}
+\newcommand{\talk}[4]{#1. \textit{#2}, #4. \vspace{-2mm}}
+\newcommand{\award}[2]{#1 \hfill #2}
 
 
 \begin{document}
@@ -30,33 +37,65 @@
 \section{EDUCATION}
     \textit{Bachelor of Mathematics}, Computer Science and Statistics (Double Major) \\
     University of Waterloo, Waterloo, ON, \\
+    Cumulative GPA: 3.94/4.00 \\
     Expected April 2022
 
 
 \section{EXPERIENCE}
-    \experience{Citadel}{Incoming Quantitative Research Intern}{Summer 2021}
+    \experience{Citadel}{Incoming Quantitative Research Intern}{Jun - Aug 2021}
+    \vspace{-2mm}
+
+    \experience{NVIDIA}{Performance Software Engineering Intern}{Aug - Dec 2020}
     \begin{itemize}
-        \item test point
-        \item another test point
+        \item Reduced BERT/Megatron \textbf{inference latency by ~30\%} through sparsity (C++).
+        \item Open-sourced sparse BERT (Python), the current fastest inference implementation.
     \end{itemize}
 
-    \experience{NVIDIA}{Performance Software Engineering Intern}{Fall 2020}
+    \experience{Uber ATG}{Research Intern}{Jan - Aug 2020}
     \begin{itemize}
-        \item test point
-        \item another test point
+        \item Improved \textbf{object detection by 90\%} (AP) and \textbf{motion forecasting by 22\%} (L2) of a self-driving neural net under realistic positional error.
+        \item Published the learned positional error correction system at CoRL (first author).
     \end{itemize}
 
+    \experience{Google Brain}{Research Software Engineering Intern}{May - Aug 2019}
+    \begin{itemize}
+        \item Unlocked K-FAC for \textbf{over 370,000 users} by implementing and open-sourcing automatic support for arbitrary neural network architectures (Keras).
+        \item Enabled trivial multi-node training with efficient distributed operation placement.
+        \item Designed, created, and open-sourced idiomatic, reproducible training recipes.
+    \end{itemize}
+
+    \experience{John Hancock Financial}{Data Science Intern}{May - Aug 2018}
+    \begin{itemize}
+        \item Achieved a \textbf{fraud detection rate of 63\%} by designing an unsupervised ML model.
+        \item Deployed 25 fraud heuristics that \textbf{correctly flagged 100+} fraudulent claims.
+    \end{itemize}
+
+    % \experience{Sunnybrook Research Institute}{Software Developer Intern}{Jul - Aug 2018}
+    % \begin{itemize}
+    %     \item Improved MRI segmentation accuracy by \textbf{up to 80\%}. % by via techniques like watershed and clustering.
+    %     \item Reduced time to contour MRI scans from \textbf{\~5 hrs to \~40 mins}. % through automation software
+    % \end{itemize}
+
+    % \experience{McMaster University}{Research Intern}{Jul - Aug 2018}
 
 \section{RESEARCH}
-    \ura{Professor Gautam Kamath}{University of Waterloo}{Fall 2020}
+    \ura{Prof. Martin Lysy, Dr. Lawrence Murray}{}{Fall 2020}
     \begin{itemize}
-        \item summary of research
+        \item Research in Sequential Monte Carlo methods for inference on COVID models.
     \end{itemize}
+    \vspace{-2mm}
 
-    \ura{Professor Pascal Poupart}{University of Waterloo}{Fall 2020}
+    \ura{Prof. Gautam Kamath}{}{Fall 2020}
     \begin{itemize}
-        \item summary of research
+        \item Research in computationally efficient differentially private SGD.
     \end{itemize}
+    \vspace{-2mm}
+
+    \ura{Prof. Pascal Poupart}{}{Fall 2020}
+    \begin{itemize}
+        \item Research in practical second-order methods for neural network optimization.
+    \end{itemize}
+    \vspace{-2mm}
 
 \section{PUBLICATIONS}
     \paper
@@ -72,15 +111,6 @@
     {\textit{NeurIPS PPML Workshop}}{Virtual}{2020}
     {https://arxiv.org/abs/2010.09063}
 
-\section{TALKS}
-    \talk
-    {Clustering for Image Analysis (with Kanika Chopra)}
-    {WiSTEM High School Student Conference}{Virtual}{Feb 2021}
-
-    \talk
-    {Establishing a Productive Machine Learning Workflow}
-    {Hack the North++}{Virtual}{Jan 2021}
-
 \section{SOFTWARE}
     \software{ShapeCheck}{Framework agnostic runtime array checking library}
     {https://github.com/n2cholas/jax-resnet}
@@ -89,12 +119,70 @@
     {JAX ResNet}{Composable, unit-tested code and checkpoints for ResNet variants}
     {https://pypi.org/project/shapecheck/}
 
+    Contributed to: TensorFlow, PyTorch Ignite, Optax, Flax.
+
+\newpage
+
 \section{LEADERHIP}
-    \experience{UWaterloo Data Science Club}{Lecturer}{Fall 2018 - Present}
-    \begin{itemize}
-        \item test point
-        \item another test point
-    \end{itemize}
+    \experience{Math Faculty}{Peer Mentor}{Jan 2021 - Present} \\
+    \experience{Tech+}{Mentor}{Jan 2019 - Present} \\
+    \experience{UWaterloo Data Science Club}{Lecturer}{Sep 2018 - Present} \\
+    \experience{Hack the North}{Mentor/Workshop Lead}{Sep 2018, 2019} \\
+    \experience{WATonomous}{Computer Vision Developer}{Sep 2017 - Apr 2018}
+
+\section{AWARDS}
+    \award{President's Research Award (\$1500)}{2020}\\
+    \award{David Shepherd Upper-Year Scholarship in Mathematics (\$5000)}{2019}\\
+    \award{President's Research Award (\$1500)}{2019}\\
+    \award{Faculty of Mathematics Scholarship (\$5000)}{2018}\\
+    \award{University of Waterloo President's Scholarship of Distinction (\$1500)}{2018}\\
+    \award{Fahd Ananta Fellowship Award in Computer Science (\$200)}{2017}
+    % \award{Lieutenant Governor's Community Volunteer Award}{2017}
+
+\section{TALKS}
+    \talk
+    {Clustering for Image Analysis (with Kanika Chopra)}
+    {WiSTEM High School Student Conference}{Virtual}{Feb 2021}
+
+    \talk
+    {Establishing a Productive ML Workflow}
+    {Hack the North++}{Virtual}{Jan 2021}
+
+    \talk
+    {Interactive Data Visualization with Altair}
+    {Hack the North++}{Virtual}{Jan 2021}
+
+    \talk
+    {Overview of Data Science and Data Science Careers}
+    {UWaterloo Data Science Club}{Waterloo}{Aug 2020}
+
+    \talk
+    {What You See is What You Get: Exploiting Visibility for 3D Object Detection}
+    {Uber ATG Reading Group}{Toronto}{Jul 2020}
+
+    \talk
+    {Introduction to JAX for Machine Learning and More}
+    {University of Waterloo Data Science Club}{Waterloo}{Jul 2020}
+
+    \talk
+    {Stand-Alone Self-Attention in Vision Models}
+    {Uber ATG Reading Group}{Toronto}{Apr 2020}
+
+    \talk
+    {Neural Network Optimization Methods}
+    {Reading Group}{Waterloo}{Dec 2019}
+
+    \talk
+    {Introduction to Neural Networks in TensorFlow 2.0}
+    {Laurier Developer Student Club}{Waterloo}{Nov 2019}
+
+    \talk
+    {Introduction to Machine Learning with Scikit-learn}
+    {Hack the North}{Waterloo}{Sep 2019}
+
+    \talk
+    {Introduction to Data Cleaning with Pandas}
+    {Hack the North}{Waterloo}{Sep 2019}
 
 \end{resume}
 \end{document}
